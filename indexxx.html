@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Auto Play Demo</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:
+          Segoe UI,
+          sans-serif;
+      }
+
+      body {
+        height: 300vh;
+        background: linear-gradient(135deg, #0f172a, #111827, #1e293b);
+        color: white;
+        overflow-x: hidden;
+      }
+
+      .hero {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 60px;
+        margin-bottom: 20px;
+      }
+
+      p {
+        opacity: 0.8;
+      }
+
+      .music-indicator {
+        position: fixed;
+        right: 25px;
+        bottom: 25px;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+        cursor: pointer;
+        transition: 0.4s;
+        z-index: 999;
+      }
+
+      .music-indicator:hover {
+        transform: scale(1.1);
+      }
+
+      .music-indicator.playing {
+        box-shadow:
+          0 0 10px #38bdf8,
+          0 0 25px #8b5cf6;
+      }
+
+      .equalizer {
+        position: absolute;
+        bottom: -10px;
+        display: flex;
+        gap: 2px;
+        height: 10px;
+      }
+
+      .equalizer span {
+        width: 3px;
+        height: 4px;
+        background: #38bdf8;
+        border-radius: 5px;
+        animation: wave 0.7s infinite;
+        display: none;
+      }
+
+      .playing .equalizer span {
+        display: block;
+      }
+
+      .equalizer span:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      .equalizer span:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      @keyframes wave {
+        0% {
+          height: 4px;
+        }
+
+        50% {
+          height: 10px;
+        }
+
+        100% {
+          height: 4px;
+        }
+      }
+
+      .notice {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255, 255, 255, 0.08);
+        padding: 12px 20px;
+        border-radius: 30px;
+        backdrop-filter: blur(15px);
+        opacity: 0.8;
+      }
+
+      @media (max-width: 768px) {
+        .music-indicator {
+          right: 18px;
+          bottom: 18px;
+          width: 48px;
+          height: 48px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="notice">👇 Scroll / Klik untuk memulai musik</div>
+
+    <section class="hero">
+      <h1>Music Demo</h1>
+
+      <p>
+        Chrome akan memblokir autoplay murni.<br />
+        Demo ini akan langsung memainkan musik setelah interaksi pertama.
+      </p>
+    </section>
+
+    <audio id="bgMusic" loop preload="auto">
+      <source src="audio/music.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div class="music-indicator" id="musicBtn">
+      🎵
+
+      <div class="equalizer">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <script>
+      const audio = document.getElementById("bgMusic");
+      const btn = document.getElementById("musicBtn");
+
+      audio.volume = 0.2;
+
+      let started = false;
+
+      function fadeIn() {
+        audio.volume = 0;
+
+        audio
+          .play()
+          .then(() => {
+            let v = 0;
+
+            const timer = setInterval(() => {
+              v += 0.02;
+
+              if (v >= 0.2) {
+                v = 0.2;
+
+                clearInterval(timer);
+              }
+
+              audio.volume = v;
+            }, 80);
+
+            btn.classList.add("playing");
+
+            started = true;
+          })
+          .catch(() => {
+            console.log("Autoplay diblokir browser");
+          });
+      }
+
+      // coba autoplay
+
+      window.addEventListener("load", () => {
+        fadeIn();
+      });
+
+      // interaksi pertama
+
+      function firstInteraction() {
+        if (started) return;
+
+        fadeIn();
+
+        document.removeEventListener("click", firstInteraction);
+
+        document.removeEventListener("scroll", firstInteraction);
+
+        document.removeEventListener("touchstart", firstInteraction);
+
+        document.removeEventListener("keydown", firstInteraction);
+      }
+
+      document.addEventListener("click", firstInteraction, { passive: true });
+
+      document.addEventListener("scroll", firstInteraction, { passive: true });
+
+      document.addEventListener("touchstart", firstInteraction, {
+        passive: true,
+      });
+
+      document.addEventListener("keydown", firstInteraction, { passive: true });
+
+      // tombol pause/play
+
+      btn.onclick = () => {
+        if (audio.paused) {
+          audio.play();
+
+          btn.classList.add("playing");
+        } else {
+          audio.pause();
+
+          btn.classList.remove("playing");
+        }
+      };
+    </script>
+  </body>
+</html>
