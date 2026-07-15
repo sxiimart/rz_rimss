@@ -8,13 +8,13 @@
       content="Minum air putih di pagi hari saat perut kosong punya banyak manfaat: membantu detoksifikasi alami, meningkatkan metabolisme, mendukung imun tubuh, hingga menjaga fokus dan kesehatan kulit."
     />
     <title>
-      Manfaat Minum Air Putih di Pagi Hari Saat Perut Kosong untuk Kesehatan
-      | RZ Rimss
+      Manfaat Minum Air Putih di Pagi Hari Saat Perut Kosong untuk Kesehatan |
+      RZ Rimss
     </title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -33,7 +33,7 @@
         overflow-x: hidden;
       }
       body {
-        font-family: "Inter", sans-serif;
+        font-family: sans-serif;
         background: linear-gradient(
           180deg,
           #0b1020 0%,
@@ -72,9 +72,9 @@
         --radius-md: 18px;
         --radius-lg: 26px;
         --radius-xl: 34px;
-        --font-display: arial;
-        --font-alt: arial;
-        --font-body: arial;
+        --font-display: sans-serif;
+        --font-alt: sans-serif;
+        --font-body: sans-serif;
         --nav-h: 76px;
         --content-max: 1400px;
         --nm-shadow-raised:
@@ -996,27 +996,28 @@
         }
       }
 
-
       /* --- Article Content --- */
       .article-content {
-        max-width: 800px;
+        max-width: 740px;
         width: 100%;
+        margin: 0 auto;
+        font-family: sans-serif;
       }
       .content-block {
-        margin-bottom: clamp(44px, 6vw, 64px);
+        margin-bottom: clamp(48px, 6.4vw, 72px);
         scroll-margin-top: calc(var(--nav-h) + 24px);
       }
       .content-block .block-kicker {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        font-family: var(--font-alt);
-        font-size: 0.7rem;
-        font-weight: 700;
-        letter-spacing: 0.14em;
+        font-family: sans-serif, var(--font-alt);
+        font-size: 0.68rem;
+        font-weight: 900;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
         color: var(--accent-cyan);
-        margin-bottom: 14px;
+        margin-bottom: 16px;
         padding: 6px 14px 6px 10px;
         border-radius: 100px;
         background: rgba(56, 189, 248, 0.1);
@@ -1031,20 +1032,20 @@
       }
       .content-block h2 {
         position: relative;
-        font-family: var(--font-display);
-        font-size: clamp(1.6rem, 3.3vw, 2.15rem);
-        font-weight: 800;
-        letter-spacing: -0.02em;
+        font-family: sans-serif, var(--font-display);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-weight: 900;
+        letter-spacing: -0.025em;
         color: var(--text-primary);
-        margin-bottom: 22px;
-        line-height: 1.24;
+        margin-bottom: 24px;
+        line-height: 1.28;
         scroll-margin-top: calc(var(--nav-h) + 24px);
         text-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
       }
       .content-block h2::after {
         content: "";
         display: block;
-        margin-top: 14px;
+        margin-top: 16px;
         width: 60px;
         height: 3px;
         border-radius: 3px;
@@ -1057,23 +1058,46 @@
         box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
       }
       .content-block p {
-        font-size: 1.02rem;
-        line-height: 1.9;
+        font-family: sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: -0.006em;
+        line-height: 1.82;
         color: var(--text-secondary);
-        margin-bottom: clamp(22px, 3.2vw, 30px);
+        margin-bottom: clamp(20px, 2.8vw, 26px);
       }
       .content-block p:last-child {
         margin-bottom: 0;
       }
+      .content-block strong {
+        color: var(--text-primary);
+        font-weight: 700;
+      }
+      .content-block em {
+        font-style: italic;
+        color: var(--text-primary);
+      }
+      .content-block mark.hl,
+      .content-block .hl {
+        background: linear-gradient(
+          180deg,
+          transparent 62%,
+          rgba(56, 189, 248, 0.32) 62%
+        );
+        color: var(--text-primary);
+        font-weight: 600;
+        padding: 0 1px;
+        border-radius: 2px;
+      }
 
       /* Drop cap on first paragraph */
       .dropcap::first-letter {
-        font-family: var(--font-display);
-        font-size: 4.4rem;
+        font-family: sans-serif, var(--font-display);
+        font-size: 4rem;
         font-weight: 700;
-        line-height: 0.8;
+        line-height: 0.78;
         float: left;
-        padding: 8px 12px 0 0;
+        padding: 6px 10px 0 0;
         background: linear-gradient(
           160deg,
           var(--accent-cyan) 20%,
@@ -1321,55 +1345,96 @@
       .info-box {
         display: flex;
         gap: 16px;
-        background: rgba(59, 130, 246, 0.06);
-        border: 1px solid rgba(59, 130, 246, 0.22);
+        align-items: flex-start;
+        background: linear-gradient(
+          135deg,
+          rgba(59, 130, 246, 0.09),
+          rgba(139, 92, 246, 0.04)
+        );
+        border: 1px solid rgba(59, 130, 246, 0.24);
         border-radius: var(--radius-md);
-        padding: 20px 22px;
-        margin: 24px 0;
+        padding: 20px 24px;
+        margin: 28px 0;
         box-shadow: var(--nm-shadow-sm);
       }
       .info-box .info-icon {
-        font-size: 1.4rem;
+        font-size: 1.15rem;
         flex-shrink: 0;
+        width: 34px;
+        height: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(56, 189, 248, 0.14);
+        border: 1px solid rgba(56, 189, 248, 0.3);
       }
       .info-box p {
-        font-size: 0.92rem;
+        font-family: sans-serif;
+        font-size: 0.94rem;
         color: var(--text-secondary);
         margin: 0;
         line-height: 1.75;
+        padding-top: 4px;
       }
       .info-box strong {
-        color: var(--text-primary);
+        color: var(--accent-cyan);
+        font-weight: 700;
       }
 
-      /* Pull quote for storytelling emphasis */
+      /* Pull quote for storytelling emphasis — modern blockquote */
       .pull-quote {
-        margin: 30px 0;
-        padding: 26px 28px;
+        position: relative;
+        margin: 32px 0;
+        padding: 30px 32px 28px 56px;
         border-left: 3px solid var(--accent-cyan);
         background: linear-gradient(
           90deg,
-          rgba(56, 189, 248, 0.07),
-          transparent 70%
+          rgba(56, 189, 248, 0.08),
+          rgba(139, 92, 246, 0.02) 70%
         );
         border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        overflow: hidden;
+      }
+      .pull-quote::before {
+        content: "\201C";
+        position: absolute;
+        top: -0.32em;
+        left: 14px;
+        font-family: sans-serif, var(--font-display);
+        font-size: 4.2rem;
+        font-weight: 700;
+        line-height: 1;
+        background: linear-gradient(
+          160deg,
+          var(--accent-cyan),
+          var(--accent-mag)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        opacity: 0.5;
+        pointer-events: none;
       }
       .pull-quote p {
-        font-family: var(--font-display);
-        font-size: clamp(1.05rem, 2vw, 1.28rem);
+        font-family: sans-serif, var(--font-display);
+        font-size: clamp(1.08rem, 2vw, 1.32rem);
         font-weight: 500;
-        line-height: 1.6;
+        letter-spacing: -0.015em;
+        line-height: 1.55;
         color: var(--text-primary);
-        font-style: normal;
+        font-style: italic;
         margin: 0;
       }
       .pull-quote cite {
         display: block;
-        margin-top: 12px;
+        margin-top: 14px;
         font-style: normal;
-        font-size: 0.78rem;
+        font-size: 0.76rem;
+        letter-spacing: 0.04em;
         color: var(--text-muted);
         font-weight: 600;
+        text-transform: uppercase;
       }
 
       /* =============================================
@@ -1878,7 +1943,7 @@
           --content-max: 1560px;
         }
         .article-content {
-          max-width: 860px;
+          max-width: 760px;
         }
       }
 
@@ -2236,9 +2301,8 @@
                 Kesehatan
               </h1>
               <p class="article-hero-sub">
-                Kebiasaan sederhana yang sering dianggap sepele, tetapi
-                memiliki banyak manfaat bagi kesehatan tubuh jika dilakukan
-                secara rutin.
+                Kebiasaan sederhana yang sering dianggap sepele, tetapi memiliki
+                banyak manfaat bagi kesehatan tubuh jika dilakukan secara rutin.
               </p>
               <div class="article-hero-meta">
                 <span class="meta-item">
@@ -2346,9 +2410,9 @@
                 Perlu Diketahui
               </div>
               <p>
-                Minum <strong>air putih</strong> saat perut kosong di pagi
-                hari adalah kebiasaan ringan yang membantu tubuh memulai hari
-                dengan lebih segar.
+                Minum <strong>air putih</strong> saat perut kosong di pagi hari
+                adalah kebiasaan ringan yang membantu tubuh memulai hari dengan
+                lebih segar.
               </p>
             </div>
             <div class="toc-card">
@@ -2412,27 +2476,27 @@
                 dibersihkan.
               </p>
               <p>
-                Ginjal dan hati bekerja sepanjang malam untuk memproses sisa
+                Ginjal dan hati bekerja sepanjang malam memproses sisa
                 metabolisme. Segelas air putih di pagi hari membantu
-                melancarkan proses pembuangan zat sisa tersebut lewat urine.
+                <em>melancarkan proses pembuangan</em> zat sisa tersebut lewat
+                urine.
               </p>
               <p>
-                Sederhananya, bayangkan air putih sebagai "pembilas" ringan
-                yang membantu sistem pencernaan memulai kerjanya dari
-                kondisi yang lebih bersih.
+                Sederhananya, air putih berperan sebagai "pembilas" ringan yang
+                membantu sistem pencernaan memulai kerjanya dari kondisi lebih
+                bersih — bukan pengganti fungsi organ, hanya pendukungnya.
               </p>
               <p>
-                Kebiasaan ini tidak menggantikan fungsi detoksifikasi alami
-                organ tubuh, tetapi membantu prosesnya berjalan lebih
-                optimal.
-              </p>
-              <p>
-                Cukup satu hingga dua gelas air putih suhu ruang, diminum
-                perlahan sebelum sarapan, sudah cukup untuk memulai
-                kebiasaan ini.
+                Cukup <strong>satu hingga dua gelas</strong> air putih suhu
+                ruang, diminum perlahan sebelum sarapan, sudah cukup untuk
+                memulai kebiasaan ini.
               </p>
 
-              <div class="gallery-item" data-lightbox="img/detoksifikasi.jpg" style="aspect-ratio: 16 / 9; width: 100%; margin: 8px 0 4px;">
+              <div
+                class="gallery-item"
+                data-lightbox="img/detoksifikasi.jpg"
+                style="aspect-ratio: 16 / 9; width: 100%; margin: 8px 0 4px"
+              >
                 <img
                   loading="lazy"
                   decoding="async"
@@ -2454,9 +2518,9 @@
               <div class="info-box">
                 <div class="info-icon">💡</div>
                 <p>
-                  <strong>Catatan:</strong> Air putih membantu mendukung
-                  fungsi detoksifikasi alami tubuh, bukan sebagai pengganti
-                  fungsi organ seperti ginjal dan hati.
+                  <strong>Catatan:</strong> air putih membantu mendukung fungsi
+                  detoksifikasi alami tubuh, bukan pengganti fungsi organ
+                  seperti ginjal dan hati.
                 </p>
               </div>
             </section>
@@ -2466,33 +2530,32 @@
               <span class="block-kicker">Bagian 02 · Metabolisme</span>
               <h2>Membantu Meningkatkan Metabolisme</h2>
               <p>
-                Beberapa penelitian kecil menunjukkan bahwa minum air putih
-                bisa memberi dorongan sementara pada laju metabolisme
-                tubuh.
+                Beberapa penelitian kecil menunjukkan bahwa minum air putih bisa
+                memberi dorongan sementara pada laju metabolisme tubuh.
               </p>
               <p>
-                Saat perut kosong, tubuh perlu menyesuaikan suhu air yang
-                masuk, dan proses ini turut melibatkan sedikit energi —
-                efeknya memang kecil, tapi tetap bermanfaat sebagai bagian
-                dari rutinitas sehat.
+                Saat perut kosong, tubuh menyesuaikan suhu air yang masuk —
+                efeknya memang kecil, tapi tetap bermanfaat sebagai bagian dari
+                rutinitas sehat. Air putih juga membantu pencernaan bekerja
+                lebih lancar sejak awal hari.
               </p>
               <p>
-                Air putih juga membantu proses pencernaan bekerja lebih
-                lancar sejak awal hari, sehingga tubuh lebih siap menerima
-                asupan sarapan.
+                Contohnya, coba minum segelas air putih
+                <strong>20–30 menit sebelum sarapan</strong>, lalu rasakan
+                bedanya dibanding langsung makan tanpa minum air terlebih
+                dahulu.
               </p>
               <p>
-                Contoh sederhana: coba minum segelas air putih 20–30 menit
-                sebelum sarapan, lalu rasakan bedanya dengan hari-hari
-                biasa kamu langsung makan tanpa minum air terlebih dahulu.
-              </p>
-              <p>
-                Kebiasaan kecil ini, jika dilakukan konsisten, bisa menjadi
-                pelengkap gaya hidup sehat — bukan solusi instan penurunan
-                berat badan.
+                Kebiasaan kecil ini, jika konsisten, bisa jadi pelengkap gaya
+                hidup sehat — <em>bukan solusi instan</em> penurunan berat
+                badan.
               </p>
 
-              <div class="gallery-item" data-lightbox="img/metabolisme.jpg" style="aspect-ratio: 16 / 9; width: 100%; margin: 8px 0 4px;">
+              <div
+                class="gallery-item"
+                data-lightbox="img/metabolisme.jpg"
+                style="aspect-ratio: 16 / 9; width: 100%; margin: 8px 0 4px"
+              >
                 <img
                   loading="lazy"
                   decoding="async"
@@ -2518,38 +2581,32 @@
               <h2>Mendukung Sistem Kekebalan Tubuh</h2>
               <p>
                 Tubuh yang cukup terhidrasi bekerja lebih optimal dalam
-                mengedarkan nutrisi dan sel-sel yang berperan menjaga daya
-                tahan tubuh.
+                mengedarkan nutrisi dan sel-sel yang menjaga daya tahan tubuh.
               </p>
               <p>
-                Cairan tubuh yang cukup membantu kelenjar getah bening dan
-                sistem limfatik bekerja lebih lancar, salah satu jalur
-                penting dalam sistem kekebalan tubuh.
-              </p>
-              <p>
-                Minum air putih di pagi hari juga membantu menjaga
-                kelembapan saluran pernapasan, yang berperan sebagai
-                penghalang alami terhadap kuman yang masuk lewat hidung
-                dan tenggorokan.
-              </p>
-              <p>
-                Sederhananya, tubuh yang cukup cairan punya "modal" yang
-                lebih baik untuk menjalankan fungsi pertahanannya
-                sehari-hari.
+                Cairan yang cukup membantu kelenjar getah bening dan sistem
+                limfatik bekerja lebih lancar — salah satu jalur penting dalam
+                sistem kekebalan tubuh. Air putih di pagi hari juga menjaga
+                <mark class="hl">kelembapan saluran pernapasan</mark>
+                sebagai penghalang alami dari kuman.
               </p>
               <p>
                 Tentu, ini bukan pengganti pola makan bergizi dan istirahat
-                cukup — air putih adalah salah satu bagian dari kombinasi
-                gaya hidup sehat secara menyeluruh.
+                cukup — air putih hanyalah salah satu bagian dari kombinasi gaya
+                hidup sehat secara menyeluruh.
               </p>
               <div class="pull-quote">
                 <p>
-                  "Tubuh yang cukup terhidrasi adalah fondasi awal dari
-                  daya tahan yang baik."
+                  Tubuh yang cukup terhidrasi adalah fondasi awal dari daya
+                  tahan yang baik.
                 </p>
               </div>
 
-              <div class="gallery-item" data-lightbox="img/kekebalan.jpg" style="aspect-ratio: 16 / 9; width: 100%; margin: 8px 0 4px;">
+              <div
+                class="gallery-item"
+                data-lightbox="img/kekebalan.jpg"
+                style="aspect-ratio: 16 / 9; width: 100%; margin: 8px 0 4px"
+              >
                 <img
                   loading="lazy"
                   decoding="async"
@@ -2574,31 +2631,31 @@
               <span class="block-kicker">Bagian 04 · Kognitif</span>
               <h2>Meningkatkan Fokus dan Kinerja Otak</h2>
               <p>
-                Otak manusia sebagian besar terdiri dari air, sehingga
-                kondisi hidrasi tubuh punya kaitan erat dengan bagaimana
-                otak bekerja.
+                Otak manusia sebagian besar terdiri dari air, sehingga kondisi
+                hidrasi tubuh punya kaitan erat dengan bagaimana otak bekerja.
               </p>
               <p>
                 Saat bangun tidur, tubuh sudah kehilangan cairan selama
-                berjam-jam tanpa asupan. Kondisi ini bisa membuat badan
-                terasa lemas dan sulit berkonsentrasi di awal hari.
+                berjam-jam tanpa asupan — kondisi ini bisa membuat badan terasa
+                lemas dan sulit berkonsentrasi di awal hari.
               </p>
               <p>
-                Minum air putih segera setelah bangun membantu
-                mengembalikan cairan yang hilang, sehingga tubuh dan
-                pikiran terasa lebih segar untuk memulai aktivitas.
+                Minum air putih segera setelah bangun membantu mengembalikan
+                cairan yang hilang, sehingga tubuh dan pikiran terasa
+                <em>lebih segar</em> untuk memulai aktivitas.
               </p>
               <p>
-                Contohnya, banyak orang merasa lebih mudah fokus bekerja
-                atau belajar setelah minum air putih dibanding saat masih
-                terasa haus atau lemas.
-              </p>
-              <p>
-                Kebiasaan ini sederhana, tapi efeknya bisa terasa langsung
-                pada mood dan tingkat energi sepanjang pagi.
+                Banyak orang merasa lebih mudah fokus bekerja atau belajar
+                setelah minum air putih, dibanding saat masih terasa haus atau
+                lemas. <strong>Efeknya bisa terasa langsung</strong>
+                pada mood dan energi sepanjang pagi.
               </p>
 
-              <div class="gallery-item" data-lightbox="img/fokus.jpg" style="aspect-ratio: 16 / 9; width: 100%; margin: 8px 0 4px;">
+              <div
+                class="gallery-item"
+                data-lightbox="img/fokus.jpg"
+                style="aspect-ratio: 16 / 9; width: 100%; margin: 8px 0 4px"
+              >
                 <img
                   loading="lazy"
                   decoding="async"
@@ -2627,28 +2684,26 @@
                 dipengaruhi oleh seberapa baik tubuh terhidrasi.
               </p>
               <p>
-                Kekurangan cairan bisa membuat kulit terlihat kusam dan
-                kering. Sebaliknya, tubuh yang cukup terhidrasi cenderung
-                membuat kulit tampak lebih segar dan kenyal.
+                Kekurangan cairan bisa membuat kulit terlihat kusam dan kering.
+                Sebaliknya, tubuh yang cukup terhidrasi cenderung membuat kulit
+                tampak <mark class="hl">lebih segar dan kenyal</mark>.
               </p>
               <p>
-                Minum air putih di pagi hari adalah salah satu cara paling
-                sederhana untuk mulai mendukung kelembapan kulit dari
-                dalam, sebelum menambahkan perawatan dari luar seperti
-                pelembap.
+                Minum air putih di pagi hari adalah cara paling sederhana untuk
+                mendukung kelembapan kulit dari dalam, sebelum menambahkan
+                perawatan dari luar seperti pelembap.
               </p>
               <p>
-                Contohnya, orang yang rutin minum air putih cukup setiap
-                hari sering melaporkan kulit terasa lebih lembap
-                dibandingkan saat mereka jarang minum air.
-              </p>
-              <p>
-                Tentu, hasilnya berbeda pada setiap orang, tergantung juga
-                pada faktor lain seperti pola makan, tidur, dan perawatan
-                kulit secara keseluruhan.
+                Tentu, hasilnya berbeda pada setiap orang, tergantung juga pada
+                faktor lain seperti pola makan, tidur, dan perawatan kulit
+                secara keseluruhan.
               </p>
 
-              <div class="gallery-item" data-lightbox="img/kulit.jpg" style="aspect-ratio: 16 / 9; width: 100%; margin: 8px 0 4px;">
+              <div
+                class="gallery-item"
+                data-lightbox="img/kulit.jpg"
+                style="aspect-ratio: 16 / 9; width: 100%; margin: 8px 0 4px"
+              >
                 <img
                   loading="lazy"
                   decoding="async"
@@ -2670,10 +2725,10 @@
               <div class="info-box">
                 <div class="info-icon">💡</div>
                 <p>
-                  <strong>Catatan:</strong> Air putih membantu mendukung
+                  <strong>Catatan:</strong> air putih membantu mendukung
                   kelembapan kulit, tetapi bukan solusi tunggal untuk semua
-                  masalah kulit. Pola makan dan perawatan kulit yang tepat
-                  tetap diperlukan.
+                  masalah kulit. Pola makan dan perawatan kulit yang tepat tetap
+                  diperlukan.
                 </p>
               </div>
             </section>
@@ -2682,34 +2737,38 @@
             <section id="kesimpulan" class="content-block reveal">
               <span class="block-kicker">Bagian 06 · Kesimpulan</span>
               <h2>Kesimpulan: Kebiasaan Kecil, Manfaat Besar</h2>
-              <p>
-                Minum air putih di pagi hari saat perut kosong adalah
-                kebiasaan sederhana yang mudah dilakukan siapa saja, tanpa
-                biaya dan tanpa alat khusus.
+              <p class="dropcap">
+                Minum air putih di pagi hari saat perut kosong adalah kebiasaan
+                sederhana yang mudah dilakukan siapa saja, tanpa biaya dan tanpa
+                alat khusus.
               </p>
               <p>
-                Mulai dari membantu proses detoksifikasi alami tubuh,
-                mendorong metabolisme, mendukung sistem kekebalan tubuh,
-                menjaga fokus di pagi hari, hingga membantu kelembapan
-                kulit.
+                Mulai dari membantu detoksifikasi alami tubuh, mendorong
+                metabolisme, mendukung sistem kekebalan tubuh, menjaga fokus di
+                pagi hari, hingga membantu kelembapan kulit.
               </p>
               <p>
                 Manfaatnya memang tidak instan dan berbeda-beda pada setiap
-                orang, tetapi konsistensi adalah kuncinya.
+                orang, tetapi <strong>konsistensi adalah kuncinya</strong>.
               </p>
+              <div class="pull-quote">
+                <p>
+                  Yuk, mulai biasakan minum satu hingga dua gelas air putih
+                  setiap bangun tidur — langkah kecil menuju gaya hidup yang
+                  lebih sehat.
+                </p>
+              </div>
               <p>
-                Yuk, mulai biasakan minum satu hingga dua gelas air putih
-                setiap bangun tidur, sebagai langkah kecil menuju gaya
-                hidup yang lebih sehat.
-              </p>
-              <p>
-                Galeri berikut menampilkan beberapa ilustrasi pendukung
-                artikel ini.
+                Galeri berikut menampilkan beberapa ilustrasi pendukung artikel
+                ini.
               </p>
 
               <div class="gallery-heading">📸 Galeri Ilustrasi</div>
               <div class="gallery-grid">
-                <div class="gallery-item" data-lightbox="img/air-putih-hero.jpg">
+                <div
+                  class="gallery-item"
+                  data-lightbox="img/air-putih-hero.jpg"
+                >
                   <img
                     loading="lazy"
                     decoding="async"
@@ -2757,7 +2816,9 @@
                   <div class="gallery-item-placeholder" style="display: none">
                     ✨
                   </div>
-                  <div class="gallery-caption">Membantu menjaga kesehatan kulit</div>
+                  <div class="gallery-caption">
+                    Membantu menjaga kesehatan kulit
+                  </div>
                 </div>
               </div>
             </section>
@@ -2767,9 +2828,7 @@
               <div class="share-card-head">
                 <div class="share-card-title">
                   Bagikan Artikel Ini
-                  <span
-                    >Sebarkan tips sehat ini ke teman dan keluarga</span
-                  >
+                  <span>Sebarkan tips sehat ini ke teman dan keluarga</span>
                 </div>
               </div>
               <div class="share-row">
@@ -2862,12 +2921,16 @@
                   stroke-linejoin="round"
                 >
                   <path d="M12 3v3M12 18v3M3 12h3M18 12h3" />
-                  <path d="M12 8.2 13.4 11l2.8 1.4-2.8 1.4L12 16.6l-1.4-2.8L7.8 12.4l2.8-1.4Z" />
+                  <path
+                    d="M12 8.2 13.4 11l2.8 1.4-2.8 1.4L12 16.6l-1.4-2.8L7.8 12.4l2.8-1.4Z"
+                  />
                 </svg>
               </span>
               <div class="reco-heading-text">
                 <h2 class="reco-heading-title">Artikel Pilihan</h2>
-                <p class="reco-heading-sub">Temukan pembahasan menarik lainnya.</p>
+                <p class="reco-heading-sub">
+                  Temukan pembahasan menarik lainnya.
+                </p>
               </div>
             </div>
             <span class="reco-accent-line" aria-hidden="true"></span>
@@ -2875,6 +2938,8 @@
             <div class="reco-list">
               <a
                 class="reco-card"
+                target="_blank"
+                rel="noopener noreferrer"
                 href="sungai-bahbolon.html"
                 aria-label="Baca artikel: Sungai Bah Bolon, Aliran Kehidupan yang Membelah Kecamatan Sipispis"
               >
@@ -2961,6 +3026,8 @@
 
               <a
                 class="reco-card"
+                target="_blank"
+                rel="noopener noreferrer"
                 href="p_seng.html"
                 aria-label="Baca artikel: Penjelasan Mengenai P.Seng Desa Marjanji Kecamatan Sipispis"
               >
@@ -2990,14 +3057,13 @@
                   </div>
                   <span class="reco-thumb-overlay" aria-hidden="true"></span>
                   <h3 class="reco-item-title">
-                    Penjelasan Mengenai P.Seng Desa Marjanji Kecamatan
-                    Sipispis
+                    Penjelasan Mengenai P.Seng Desa Marjanji Kecamatan Sipispis
                   </h3>
                 </div>
                 <div class="reco-body">
                   <p class="reco-excerpt">
-                    Menyusuri wajah sebuah desa, mulai dari fasilitas
-                    keamanan hingga geliat modernisasi di sekitarnya.
+                    Menyusuri wajah sebuah desa, mulai dari fasilitas keamanan
+                    hingga geliat modernisasi di sekitarnya.
                   </p>
                   <div class="reco-meta">
                     <span class="reco-date">

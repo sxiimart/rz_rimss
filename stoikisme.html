@@ -8,13 +8,13 @@
       content="Memahami filosofi Stoikisme sebagai panduan mengendalikan diri, menghadapi tantangan hidup, dan membangun ketenangan batin di era modern. Kenali prinsip dikotomi kendali, hidup selaras dengan alam, hingga cara menerima ketidakpastian."
     />
     <title>
-      Stoikisme: Filosofi Pengendalian Diri dan Ketenangan dalam
-      Perkembangan Zaman | RZ Rimss
+      Stoikisme: Filosofi Pengendalian Diri dan Ketenangan dalam Perkembangan
+      Zaman | RZ Rimss
     </title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -33,7 +33,7 @@
         overflow-x: hidden;
       }
       body {
-        font-family: "Inter", sans-serif;
+        font-family: sans-serif;
         background: linear-gradient(
           180deg,
           #0b1020 0%,
@@ -996,27 +996,28 @@
         }
       }
 
-
       /* --- Article Content --- */
       .article-content {
-        max-width: 800px;
+        max-width: 740px;
         width: 100%;
+        margin: 0 auto;
+        font-family: sans-serif;
       }
       .content-block {
-        margin-bottom: clamp(44px, 6vw, 64px);
+        margin-bottom: clamp(48px, 6.4vw, 72px);
         scroll-margin-top: calc(var(--nav-h) + 24px);
       }
       .content-block .block-kicker {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        font-family: var(--font-alt);
-        font-size: 0.7rem;
-        font-weight: 700;
-        letter-spacing: 0.14em;
+        font-family: sans-serif, var(--font-alt);
+        font-size: 0.68rem;
+        font-weight: 900;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
         color: var(--accent-cyan);
-        margin-bottom: 14px;
+        margin-bottom: 16px;
         padding: 6px 14px 6px 10px;
         border-radius: 100px;
         background: rgba(56, 189, 248, 0.1);
@@ -1031,20 +1032,20 @@
       }
       .content-block h2 {
         position: relative;
-        font-family: var(--font-display);
-        font-size: clamp(1.6rem, 3.3vw, 2.15rem);
-        font-weight: 800;
-        letter-spacing: -0.02em;
+        font-family: sans-serif, var(--font-display);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-weight: 900;
+        letter-spacing: -0.025em;
         color: var(--text-primary);
-        margin-bottom: 22px;
-        line-height: 1.24;
+        margin-bottom: 24px;
+        line-height: 1.28;
         scroll-margin-top: calc(var(--nav-h) + 24px);
         text-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
       }
       .content-block h2::after {
         content: "";
         display: block;
-        margin-top: 14px;
+        margin-top: 16px;
         width: 60px;
         height: 3px;
         border-radius: 3px;
@@ -1057,23 +1058,46 @@
         box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
       }
       .content-block p {
-        font-size: 1.02rem;
-        line-height: 1.9;
+        font-family: sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: -0.006em;
+        line-height: 1.82;
         color: var(--text-secondary);
-        margin-bottom: clamp(22px, 3.2vw, 30px);
+        margin-bottom: clamp(20px, 2.8vw, 26px);
       }
       .content-block p:last-child {
         margin-bottom: 0;
       }
+      .content-block strong {
+        color: var(--text-primary);
+        font-weight: 700;
+      }
+      .content-block em {
+        font-style: italic;
+        color: var(--text-primary);
+      }
+      .content-block mark.hl,
+      .content-block .hl {
+        background: linear-gradient(
+          180deg,
+          transparent 62%,
+          rgba(56, 189, 248, 0.32) 62%
+        );
+        color: var(--text-primary);
+        font-weight: 600;
+        padding: 0 1px;
+        border-radius: 2px;
+      }
 
       /* Drop cap on first paragraph */
       .dropcap::first-letter {
-        font-family: var(--font-display);
-        font-size: 4.4rem;
+        font-family: sans-serif, var(--font-display);
+        font-size: 4rem;
         font-weight: 700;
-        line-height: 0.8;
+        line-height: 0.78;
         float: left;
-        padding: 8px 12px 0 0;
+        padding: 6px 10px 0 0;
         background: linear-gradient(
           160deg,
           var(--accent-cyan) 20%,
@@ -1321,55 +1345,96 @@
       .info-box {
         display: flex;
         gap: 16px;
-        background: rgba(59, 130, 246, 0.06);
-        border: 1px solid rgba(59, 130, 246, 0.22);
+        align-items: flex-start;
+        background: linear-gradient(
+          135deg,
+          rgba(59, 130, 246, 0.09),
+          rgba(139, 92, 246, 0.04)
+        );
+        border: 1px solid rgba(59, 130, 246, 0.24);
         border-radius: var(--radius-md);
-        padding: 20px 22px;
-        margin: 24px 0;
+        padding: 20px 24px;
+        margin: 28px 0;
         box-shadow: var(--nm-shadow-sm);
       }
       .info-box .info-icon {
-        font-size: 1.4rem;
+        font-size: 1.15rem;
         flex-shrink: 0;
+        width: 34px;
+        height: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(56, 189, 248, 0.14);
+        border: 1px solid rgba(56, 189, 248, 0.3);
       }
       .info-box p {
-        font-size: 0.92rem;
+        font-family: sans-serif;
+        font-size: 0.94rem;
         color: var(--text-secondary);
         margin: 0;
         line-height: 1.75;
+        padding-top: 4px;
       }
       .info-box strong {
-        color: var(--text-primary);
+        color: var(--accent-cyan);
+        font-weight: 700;
       }
 
-      /* Pull quote for storytelling emphasis */
+      /* Pull quote for storytelling emphasis — modern blockquote */
       .pull-quote {
-        margin: 30px 0;
-        padding: 26px 28px;
+        position: relative;
+        margin: 32px 0;
+        padding: 30px 32px 28px 56px;
         border-left: 3px solid var(--accent-cyan);
         background: linear-gradient(
           90deg,
-          rgba(56, 189, 248, 0.07),
-          transparent 70%
+          rgba(56, 189, 248, 0.08),
+          rgba(139, 92, 246, 0.02) 70%
         );
         border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        overflow: hidden;
+      }
+      .pull-quote::before {
+        content: "\201C";
+        position: absolute;
+        top: -0.32em;
+        left: 14px;
+        font-family: sans-serif, var(--font-display);
+        font-size: 4.2rem;
+        font-weight: 700;
+        line-height: 1;
+        background: linear-gradient(
+          160deg,
+          var(--accent-cyan),
+          var(--accent-mag)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        opacity: 0.5;
+        pointer-events: none;
       }
       .pull-quote p {
-        font-family: var(--font-display);
-        font-size: clamp(1.05rem, 2vw, 1.28rem);
+        font-family: sans-serif, var(--font-display);
+        font-size: clamp(1.08rem, 2vw, 1.32rem);
         font-weight: 500;
-        line-height: 1.6;
+        letter-spacing: -0.015em;
+        line-height: 1.55;
         color: var(--text-primary);
-        font-style: normal;
+        font-style: italic;
         margin: 0;
       }
       .pull-quote cite {
         display: block;
-        margin-top: 12px;
+        margin-top: 14px;
         font-style: normal;
-        font-size: 0.78rem;
+        font-size: 0.76rem;
+        letter-spacing: 0.04em;
         color: var(--text-muted);
         font-weight: 600;
+        text-transform: uppercase;
       }
 
       /* =============================================
@@ -1878,7 +1943,7 @@
           --content-max: 1560px;
         }
         .article-content {
-          max-width: 860px;
+          max-width: 760px;
         }
       }
 
@@ -2351,9 +2416,9 @@
                 Perlu Diketahui
               </div>
               <p>
-                <strong>Stoikisme</strong> mengajarkan bahwa ketenangan
-                sejati lahir dari fokus pada apa yang bisa dikendalikan, bukan
-                dari mengubah dunia luar.
+                <strong>Stoikisme</strong> mengajarkan bahwa ketenangan sejati
+                lahir dari fokus pada apa yang bisa dikendalikan, bukan dari
+                mengubah dunia luar.
               </p>
             </div>
             <div class="toc-card">
@@ -2384,8 +2449,8 @@
                 </li>
                 <li>
                   <a href="#ketenangan" data-toc
-                    ><span class="dot"></span>Ketenangan Batin &
-                    Pengendalian Diri</a
+                    ><span class="dot"></span>Ketenangan Batin & Pengendalian
+                    Diri</a
                   >
                 </li>
                 <li>
@@ -2421,31 +2486,24 @@
               <h2>Apa Itu Stoikisme</h2>
               <p class="dropcap">
                 Stoikisme adalah aliran filsafat Yunani kuno yang lahir sekitar
-                abad ke-3 SM, digagas oleh Zeno dari Citium dan kemudian
-                dikembangkan oleh para pemikir seperti Epiktetus, Seneca, dan
-                Kaisar Romawi Marcus Aurelius.
+                abad ke-3 SM, digagas Zeno dari Citium dan dikembangkan pemikir
+                seperti Epiktetus, Seneca, dan Marcus Aurelius.
               </p>
               <p>
-                Inti ajaran Stoikisme berpusat pada gagasan bahwa ketenangan
-                dan kebahagiaan sejati tidak bergantung pada keadaan di luar
-                diri, melainkan pada bagaimana seseorang merespons dan
-                memaknai peristiwa yang dialaminya.
+                Inti ajarannya: ketenangan dan kebahagiaan sejati tidak
+                bergantung pada keadaan di luar diri, melainkan pada
+                <em>bagaimana kita merespons dan memaknai</em> peristiwa yang
+                dialami.
               </p>
               <p>
-                Filosofi ini mengajarkan empat kebajikan utama: kebijaksanaan,
-                keberanian, keadilan, dan pengendalian diri, sebagai fondasi
-                untuk menjalani hidup yang bermakna dan seimbang.
+                Filosofi ini mengajarkan empat kebajikan utama — kebijaksanaan,
+                keberanian, keadilan, dan pengendalian diri — sebagai fondasi
+                hidup yang bermakna dan seimbang.
               </p>
               <p>
                 Meski berusia lebih dari dua ribu tahun, prinsip-prinsip
-                Stoikisme tetap relevan hingga kini dan banyak diadopsi dalam
-                psikologi modern, dunia kerja, hingga pengembangan diri.
-              </p>
-              <p>
-                Artikel ini akan mengulas prinsip-prinsip utama Stoikisme
-                serta bagaimana penerapannya dapat membantu kita menghadapi
-                tantangan hidup di era modern yang serba cepat dan penuh
-                ketidakpastian.
+                Stoikisme tetap relevan dan banyak diadopsi dalam psikologi
+                modern hingga pengembangan diri.
               </p>
 
               <div class="gallery-item" data-lightbox="img/stoikisme-01.jpg">
@@ -2470,9 +2528,9 @@
               <div class="info-box">
                 <div class="info-icon">💡</div>
                 <p>
-                  <strong>Catatan:</strong> Artikel ini mengulas tujuh prinsip
-                  utama Stoikisme, lengkap dengan ilustrasi pada setiap
-                  bagian agar pembaca lebih mudah memahami konteksnya.
+                  <strong>Catatan:</strong> artikel ini mengulas tujuh prinsip
+                  utama Stoikisme, lengkap dengan ilustrasi pada setiap bagian
+                  agar lebih mudah dipahami.
                 </p>
               </div>
             </section>
@@ -2483,31 +2541,24 @@
               <h2>Fokus pada Hal yang Bisa Dikendalikan</h2>
               <p>
                 Salah satu prinsip paling mendasar dalam Stoikisme adalah
-                dikotomi kendali — pemahaman bahwa segala sesuatu di dunia ini
-                terbagi menjadi dua: hal yang berada dalam kendali kita, dan
-                hal yang berada di luar kendali kita.
+                <mark class="hl">dikotomi kendali</mark> — segala sesuatu di
+                dunia terbagi menjadi dua: hal yang berada dalam kendali kita,
+                dan yang berada di luar kendali kita.
               </p>
               <p>
-                Pikiran, sikap, keputusan, dan respons kita terhadap suatu
-                peristiwa termasuk hal yang bisa dikendalikan. Sementara itu,
-                pendapat orang lain, cuaca, atau hasil akhir dari suatu usaha
-                seringkali berada di luar kendali kita.
+                Pikiran, sikap, dan respons kita termasuk hal yang bisa
+                dikendalikan. Sementara pendapat orang lain, cuaca, atau hasil
+                akhir suatu usaha, seringkali di luar kendali kita.
               </p>
               <p>
-                Dengan menyadari batas ini, seseorang dapat mengalihkan
-                energinya untuk hal-hal yang benar-benar bisa diubah, alih-alih
-                menghabiskan waktu mencemaskan sesuatu yang tidak bisa
-                dipengaruhi.
+                Dengan menyadari batas ini, seseorang bisa mengalihkan energinya
+                untuk hal yang benar-benar bisa diubah — bukan menghabiskan
+                waktu <em>mencemaskan sesuatu yang tak bisa dipengaruhi</em>.
               </p>
               <p>
                 Prinsip ini membantu mengurangi kecemasan berlebihan, sebab
-                sumber utama stres seringkali datang dari keinginan mengontrol
-                sesuatu yang sejatinya di luar jangkauan kita.
-              </p>
-              <p>
-                Dalam kehidupan modern, prinsip ini sangat relevan diterapkan,
-                misalnya saat menghadapi kritik, kegagalan, atau situasi yang
-                tidak sesuai harapan.
+                sumber stres seringkali datang dari keinginan mengontrol sesuatu
+                yang sejatinya di luar jangkauan kita.
               </p>
 
               <div class="gallery-item" data-lightbox="img/stoikisme-02.jpg">
@@ -2535,35 +2586,30 @@
               <span class="block-kicker">Bagian 03 · Ketenangan Batin</span>
               <h2>Ketenangan Batin & Pengendalian Diri</h2>
               <p>
-                Bagi para Stoa, ketenangan batin bukanlah kondisi yang datang
-                secara kebetulan, melainkan hasil dari latihan disiplin diri
-                yang konsisten dalam mengelola pikiran dan emosi.
+                Bagi para Stoa, ketenangan batin bukan kondisi yang datang
+                secara kebetulan, melainkan hasil latihan disiplin diri yang
+                konsisten dalam mengelola pikiran dan emosi.
               </p>
               <p>
                 Pengendalian diri berarti tidak membiarkan amarah, rasa takut,
-                atau keinginan berlebihan menguasai keputusan yang kita ambil
-                dalam kehidupan sehari-hari.
+                atau keinginan berlebihan
+                <strong>menguasai keputusan</strong> yang kita ambil
+                sehari-hari.
               </p>
               <p>
-                Marcus Aurelius, dalam catatan renungannya, menekankan bahwa
-                kekuatan sejati seseorang terletak pada kemampuannya
-                mengendalikan pikirannya sendiri, bukan pada usahanya
-                mengubah dunia luar.
+                Marcus Aurelius menekankan bahwa kekuatan sejati seseorang
+                terletak pada kemampuannya mengendalikan pikirannya sendiri,
+                bukan pada usahanya mengubah dunia luar.
               </p>
               <p>
                 Dengan melatih kesadaran diri dan jeda sebelum bereaksi,
                 seseorang dapat merespons berbagai situasi dengan lebih
-                bijaksana, alih-alih terbawa emosi sesaat.
-              </p>
-              <p>
-                Ketenangan batin yang terlatih ini menjadi fondasi penting
-                untuk menghadapi tekanan hidup modern tanpa kehilangan arah
-                dan keseimbangan diri.
+                bijaksana — fondasi penting menghadapi tekanan hidup modern.
               </p>
               <div class="pull-quote">
                 <p>
-                  Kekuatan sejati bukan terletak pada mengendalikan dunia
-                  luar, melainkan pada menguasai pikiran diri sendiri.
+                  Kekuatan sejati bukan terletak pada mengendalikan dunia luar,
+                  melainkan pada menguasai pikiran diri sendiri.
                 </p>
                 <cite>— Diinspirasi dari renungan Marcus Aurelius</cite>
               </div>
@@ -2593,31 +2639,25 @@
               <span class="block-kicker">Bagian 04 · Prinsip Hidup</span>
               <h2>Hidup Selaras dengan Alam</h2>
               <p>
-                Salah satu gagasan penting dalam Stoikisme adalah hidup
-                selaras dengan alam (physis), yakni menjalani hidup sesuai
-                dengan hakikat dan akal sehat manusia sebagai makhluk
-                rasional.
+                Salah satu gagasan penting dalam Stoikisme adalah hidup selaras
+                dengan alam <em>(physis)</em> — menjalani hidup sesuai hakikat
+                dan akal sehat manusia sebagai makhluk rasional.
               </p>
               <p>
-                Konsep ini mengajak setiap individu untuk menerima tatanan
-                alam semesta dan berperan sesuai dengan kodratnya, tanpa
-                memaksakan diri melawan hukum alam yang berlaku.
+                Konsep ini mengajak setiap individu menerima tatanan alam
+                semesta dan berperan sesuai kodratnya, tanpa memaksakan diri
+                melawan hukum alam yang berlaku.
               </p>
               <p>
                 Bagi kaum Stoa, menjalani peran sosial dengan penuh tanggung
-                jawab — sebagai bagian dari keluarga, komunitas, maupun
-                masyarakat luas — merupakan wujud nyata dari hidup selaras
-                dengan alam.
+                jawab — dalam keluarga, komunitas, maupun masyarakat — adalah
+                wujud nyata dari hidup selaras dengan alam, termasuk menerima
+                siklus perubahan dan kefanaan.
               </p>
               <p>
-                Prinsip ini juga mengajarkan pentingnya menerima siklus
-                kehidupan, termasuk perubahan, pertumbuhan, dan bahkan
-                kefanaan, sebagai bagian alami dari eksistensi manusia.
-              </p>
-              <p>
-                Dengan memahami dan menerima tatanan alam ini, seseorang dapat
-                menjalani hidup dengan lebih tenang tanpa terus-menerus
-                melawan arus kenyataan.
+                Dengan memahami dan menerima tatanan ini, seseorang dapat
+                menjalani hidup lebih tenang tanpa terus-menerus
+                <strong> melawan arus kenyataan</strong>.
               </p>
 
               <div class="gallery-item" data-lightbox="img/stoikisme-04.jpg">
@@ -2645,31 +2685,31 @@
               <span class="block-kicker">Bagian 05 · Ketahanan Diri</span>
               <h2>Menghadapi Kesulitan dengan Tenang</h2>
               <p>
-                Stoikisme mengajarkan bahwa kesulitan dan hambatan bukanlah
-                sesuatu yang harus dihindari, melainkan kesempatan untuk
-                melatih ketahanan mental dan karakter seseorang.
+                Stoikisme mengajarkan bahwa kesulitan dan hambatan bukan sesuatu
+                yang harus dihindari, melainkan kesempatan melatih ketahanan
+                mental dan karakter seseorang.
               </p>
               <p>
                 Kaum Stoa memandang setiap rintangan sebagai bahan bakar untuk
-                bertumbuh, sebuah gagasan yang kemudian dikenal luas sebagai
-                "the obstacle is the way" — rintangan adalah jalan itu
+                bertumbuh — gagasan yang dikenal luas sebagai
+                <em>"the obstacle is the way"</em>, rintangan adalah jalan itu
                 sendiri.
               </p>
               <p>
-                Alih-alih mengeluh atau merasa menjadi korban keadaan,
-                seseorang yang menerapkan Stoikisme akan mencoba mencari
-                makna dan pelajaran di balik setiap kesulitan yang dihadapi.
+                Alih-alih mengeluh atau merasa jadi korban keadaan, seseorang
+                yang menerapkan Stoikisme akan mencari makna dan pelajaran di
+                balik setiap kesulitan yang dihadapi.
               </p>
               <p>
-                Sikap tenang dalam menghadapi masalah juga membantu seseorang
-                mengambil keputusan secara lebih jernih, tanpa terburu-buru
-                atau dikuasai rasa panik.
+                Sikap tenang ini membantu mengambil keputusan lebih jernih,
+                tanpa terburu-buru atau dikuasai rasa panik.
               </p>
-              <p>
-                Dengan latihan yang konsisten, kesulitan yang dulunya terasa
-                berat perlahan dapat dihadapi dengan sikap yang jauh lebih
-                stabil dan penuh perspektif.
-              </p>
+              <div class="pull-quote">
+                <p>
+                  Rintangan bukan penghalang menuju tujuan — rintangan adalah
+                  jalan itu sendiri.
+                </p>
+              </div>
 
               <div class="gallery-item" data-lightbox="img/stoikisme-05.jpg">
                 <img
@@ -2696,31 +2736,24 @@
               <span class="block-kicker">Bagian 06 · Penerimaan</span>
               <h2>Menerima Ketidakpastian</h2>
               <p>
-                Hidup penuh dengan hal-hal yang tidak dapat diprediksi, mulai
-                dari perubahan rencana, kegagalan, hingga kehilangan yang
-                datang tanpa peringatan.
+                Hidup penuh hal-hal yang tidak dapat diprediksi, mulai dari
+                perubahan rencana, kegagalan, hingga kehilangan yang datang
+                tanpa peringatan.
               </p>
               <p>
                 Stoikisme mengajarkan bahwa menerima ketidakpastian bukan
-                berarti pasrah tanpa usaha, melainkan memahami bahwa hasil
-                akhir dari sebuah usaha tidak selalu berada dalam kendali
-                kita sepenuhnya.
+                berarti pasrah tanpa usaha, melainkan memahami bahwa hasil akhir
+                tidak selalu <em>sepenuhnya berada dalam kendali kita</em>.
               </p>
               <p>
                 Dengan menerima kenyataan ini, seseorang dapat tetap berusaha
-                secara maksimal tanpa terikat berlebihan pada hasil yang
-                diharapkan, sehingga kekecewaan yang muncul pun menjadi lebih
-                mudah dikelola.
+                maksimal tanpa terikat berlebihan pada hasil, sehingga
+                kekecewaan yang muncul lebih mudah dikelola.
               </p>
               <p>
-                Latihan menerima ketidakpastian juga membantu seseorang lebih
-                fleksibel dalam menghadapi perubahan, alih-alih terus-menerus
-                melawan kenyataan yang tidak dapat diubah.
-              </p>
-              <p>
-                Pada akhirnya, penerimaan ini menjadi kunci penting untuk
-                mencapai ketenangan batin yang stabil, sekalipun di tengah
-                dunia yang terus berubah dan sulit diprediksi.
+                Pada akhirnya, penerimaan ini menjadi
+                <strong>kunci penting untuk ketenangan batin yang stabil</strong
+                >, sekalipun di tengah dunia yang terus berubah.
               </p>
 
               <div class="gallery-item" data-lightbox="img/stoikisme-06.jpg">
@@ -2747,27 +2780,28 @@
             <section id="kesimpulan" class="content-block reveal">
               <span class="block-kicker">Bagian 07 · Penutup</span>
               <h2>Kesimpulan: Stoikisme sebagai Panduan Hidup Modern</h2>
-              <p>
-                Stoikisme mengajarkan kita untuk fokus pada hal-hal yang bisa
+              <p class="dropcap">
+                Stoikisme mengajarkan kita untuk fokus pada hal yang bisa
                 dikendalikan, melatih ketenangan batin, hidup selaras dengan
-                alam, serta menghadapi kesulitan dan ketidakpastian dengan
-                sikap yang tenang dan bijaksana.
+                alam, serta menghadapi kesulitan dan ketidakpastian dengan sikap
+                tenang dan bijaksana.
               </p>
               <p>
-                Meski lahir lebih dari dua ribu tahun lalu, prinsip-prinsip
-                ini tetap relevan sebagai panduan menghadapi tekanan dan
+                Meski lahir lebih dari dua ribu tahun lalu, prinsip-prinsip ini
+                tetap relevan sebagai panduan menghadapi tekanan dan
                 kompleksitas kehidupan di era modern.
               </p>
               <p>
-                Menerapkan Stoikisme bukan berarti menjadi acuh tak acuh
-                terhadap keadaan, melainkan belajar merespons setiap situasi
-                dengan kepala dingin dan hati yang tenang.
+                Menerapkan Stoikisme bukan berarti acuh tak acuh terhadap
+                keadaan, melainkan belajar merespons setiap situasi dengan
+                <mark class="hl">kepala dingin dan hati yang tenang</mark>.
               </p>
-              <p>
-                Semoga artikel ini bermanfaat sebagai pengantar untuk
-                memahami dan mulai menerapkan nilai-nilai Stoikisme dalam
-                kehidupan sehari-hari.
-              </p>
+              <div class="pull-quote">
+                <p>
+                  Semoga artikel ini menjadi pengantar untuk mulai menerapkan
+                  nilai-nilai Stoikisme dalam kehidupan sehari-hari.
+                </p>
+              </div>
               <p>
                 Galeri berikut menampilkan beberapa ilustrasi tambahan yang
                 merangkum perjalanan memahami filosofi Stoikisme.
@@ -2775,7 +2809,10 @@
 
               <div class="gallery-heading">📸 Galeri Ilustrasi</div>
               <div class="gallery-grid">
-                <div class="gallery-item" data-lightbox="img/stoikisme-hero.jpg">
+                <div
+                  class="gallery-item"
+                  data-lightbox="img/stoikisme-hero.jpg"
+                >
                   <img
                     loading="lazy"
                     decoding="async"
@@ -2821,7 +2858,9 @@
                   <div class="gallery-item-placeholder" style="display: none">
                     ⛰️
                   </div>
-                  <div class="gallery-caption">Ketahanan Menghadapi Kesulitan</div>
+                  <div class="gallery-caption">
+                    Ketahanan Menghadapi Kesulitan
+                  </div>
                 </div>
               </div>
             </section>
@@ -2831,9 +2870,7 @@
               <div class="share-card-head">
                 <div class="share-card-title">
                   Bagikan Artikel Ini
-                  <span
-                    >Sebarkan wawasan Stoikisme ke teman dan keluarga</span
-                  >
+                  <span>Sebarkan wawasan Stoikisme ke teman dan keluarga</span>
                 </div>
               </div>
               <div class="share-row">
@@ -2926,12 +2963,16 @@
                   stroke-linejoin="round"
                 >
                   <path d="M12 3v3M12 18v3M3 12h3M18 12h3" />
-                  <path d="M12 8.2 13.4 11l2.8 1.4-2.8 1.4L12 16.6l-1.4-2.8L7.8 12.4l2.8-1.4Z" />
+                  <path
+                    d="M12 8.2 13.4 11l2.8 1.4-2.8 1.4L12 16.6l-1.4-2.8L7.8 12.4l2.8-1.4Z"
+                  />
                 </svg>
               </span>
               <div class="reco-heading-text">
                 <h2 class="reco-heading-title">Artikel Pilihan</h2>
-                <p class="reco-heading-sub">Temukan pembahasan menarik lainnya.</p>
+                <p class="reco-heading-sub">
+                  Temukan pembahasan menarik lainnya.
+                </p>
               </div>
             </div>
             <span class="reco-accent-line" aria-hidden="true"></span>
@@ -2939,6 +2980,8 @@
             <div class="reco-list">
               <a
                 class="reco-card"
+                target="_blank"
+                rel="noopener noreferrer"
                 href="sungai-bahbolon.html"
                 aria-label="Baca artikel: Sungai Bah Bolon, Aliran Kehidupan yang Membelah Kecamatan Sipispis"
               >
@@ -2971,15 +3014,15 @@
                   </div>
                   <span class="reco-thumb-overlay" aria-hidden="true"></span>
                   <h3 class="reco-item-title">
-                    Sungai Bah Bolon: Aliran Kehidupan yang Membelah
-                    Kecamatan Sipispis
+                    Sungai Bah Bolon: Aliran Kehidupan yang Membelah Kecamatan
+                    Sipispis
                   </h3>
                 </div>
                 <div class="reco-body">
                   <p class="reco-excerpt">
-                    Mengenal Sungai Bah Bolon sebagai salah satu sungai
-                    penting yang mengalir di wilayah Kecamatan Sipispis serta
-                    memiliki peran besar bagi kehidupan masyarakat sekitar.
+                    Mengenal Sungai Bah Bolon sebagai salah satu sungai penting
+                    yang mengalir di wilayah Kecamatan Sipispis serta memiliki
+                    peran besar bagi kehidupan masyarakat sekitar.
                   </p>
                   <div class="reco-meta">
                     <span class="reco-date">
@@ -3029,6 +3072,8 @@
 
               <a
                 class="reco-card"
+                target="_blank"
+                rel="noopener noreferrer"
                 href="p_seng.html"
                 aria-label="Baca artikel: Penjelasan Mengenai P.Seng Desa Marjanji Kecamatan Sipispis"
               >
@@ -3061,15 +3106,13 @@
                   </div>
                   <span class="reco-thumb-overlay" aria-hidden="true"></span>
                   <h3 class="reco-item-title">
-                    Penjelasan Mengenai P.Seng Desa Marjanji Kecamatan
-                    Sipispis
+                    Penjelasan Mengenai P.Seng Desa Marjanji Kecamatan Sipispis
                   </h3>
                 </div>
                 <div class="reco-body">
                   <p class="reco-excerpt">
                     Mengenal sejarah, perkembangan, serta kehidupan masyarakat
-                    P.Seng yang menjadi salah satu desa di Kecamatan
-                    Sipispis.
+                    P.Seng yang menjadi salah satu desa di Kecamatan Sipispis.
                   </p>
                   <div class="reco-meta">
                     <span class="reco-date">

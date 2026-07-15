@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -33,7 +33,7 @@
         overflow-x: hidden;
       }
       body {
-        font-family: "Inter", sans-serif;
+        font-family: sans-serif;
         background: linear-gradient(
           180deg,
           #0b1020 0%,
@@ -996,27 +996,28 @@
         }
       }
 
-
-      /* --- Article Content --- */
+      /* --- Article Content — Premium Reading Typography --- */
       .article-content {
-        max-width: 800px;
+        --article-serif: sans-serif;
+        --article-sans: sans-serif;
+        max-width: 740px;
         width: 100%;
       }
       .content-block {
-        margin-bottom: clamp(44px, 6vw, 64px);
+        margin-bottom: clamp(52px, 6.4vw, 76px);
         scroll-margin-top: calc(var(--nav-h) + 24px);
       }
       .content-block .block-kicker {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        font-family: var(--font-alt);
-        font-size: 0.7rem;
-        font-weight: 700;
-        letter-spacing: 0.14em;
+        font-family: var(--article-sans);
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
         color: var(--accent-cyan);
-        margin-bottom: 14px;
+        margin-bottom: 16px;
         padding: 6px 14px 6px 10px;
         border-radius: 100px;
         background: rgba(56, 189, 248, 0.1);
@@ -1031,21 +1032,21 @@
       }
       .content-block h2 {
         position: relative;
-        font-family: var(--font-display);
-        font-size: clamp(1.6rem, 3.3vw, 2.15rem);
-        font-weight: 800;
-        letter-spacing: -0.02em;
+        font-family: var(--article-serif);
+        font-size: clamp(1.5rem, 3vw, 1.98rem);
+        font-weight: 900;
+        letter-spacing: -0.025em;
         color: var(--text-primary);
-        margin-bottom: 22px;
-        line-height: 1.24;
+        margin-bottom: 24px;
+        line-height: 1.3;
         scroll-margin-top: calc(var(--nav-h) + 24px);
         text-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
       }
       .content-block h2::after {
         content: "";
         display: block;
-        margin-top: 14px;
-        width: 60px;
+        margin-top: 16px;
+        width: 52px;
         height: 3px;
         border-radius: 3px;
         background: linear-gradient(
@@ -1057,23 +1058,61 @@
         box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
       }
       .content-block p {
-        font-size: 1.02rem;
-        line-height: 1.9;
+        font-family: var(--article-sans);
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.85;
+        letter-spacing: 0.001em;
         color: var(--text-secondary);
-        margin-bottom: clamp(22px, 3.2vw, 30px);
+        margin-bottom: clamp(20px, 2.8vw, 26px);
       }
       .content-block p:last-child {
         margin-bottom: 0;
       }
+      .content-block strong {
+        color: var(--text-primary);
+        font-weight: 700;
+      }
+      .content-block em {
+        font-style: italic;
+        color: var(--accent-cyan);
+        font-weight: 500;
+      }
+      .content-block mark {
+        background: linear-gradient(
+          120deg,
+          rgba(56, 189, 248, 0.2),
+          rgba(139, 92, 246, 0.14)
+        );
+        color: var(--text-primary);
+        padding: 0.06em 0.4em;
+        border-radius: 5px;
+        font-weight: 600;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+      }
+      .content-block .grad-underline {
+        color: var(--text-primary);
+        font-weight: 600;
+        background-image: linear-gradient(
+          90deg,
+          var(--accent-cyan),
+          var(--accent-mag)
+        );
+        background-position: 0 100%;
+        background-repeat: no-repeat;
+        background-size: 100% 2px;
+        padding-bottom: 3px;
+      }
 
       /* Drop cap on first paragraph */
       .dropcap::first-letter {
-        font-family: var(--font-display);
-        font-size: 4.4rem;
+        font-family: var(--article-serif);
+        font-size: 4.1rem;
         font-weight: 700;
-        line-height: 0.8;
+        line-height: 0.82;
         float: left;
-        padding: 8px 12px 0 0;
+        padding: 6px 12px 0 0;
         background: linear-gradient(
           160deg,
           var(--accent-cyan) 20%,
@@ -1082,6 +1121,13 @@
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
+      }
+
+      /* Ultra-wide keeps the same comfortable measure */
+      @media (min-width: 1920px) {
+        .article-content {
+          max-width: 760px;
+        }
       }
 
       /* =============================================
@@ -1333,7 +1379,8 @@
         flex-shrink: 0;
       }
       .info-box p {
-        font-size: 0.92rem;
+        font-family: "Manrope", ui-sans-serif, sans-serif;
+        font-size: 0.94rem;
         color: var(--text-secondary);
         margin: 0;
         line-height: 1.75;
@@ -1342,32 +1389,57 @@
         color: var(--text-primary);
       }
 
-      /* Pull quote for storytelling emphasis */
+      /* Pull quote — modern blockquote with oversized quotation mark */
       .pull-quote {
-        margin: 30px 0;
-        padding: 26px 28px;
+        position: relative;
+        margin: 32px 0;
+        padding: 30px 32px 30px 34px;
         border-left: 3px solid var(--accent-cyan);
         background: linear-gradient(
           90deg,
-          rgba(56, 189, 248, 0.07),
+          rgba(56, 189, 248, 0.08),
           transparent 70%
         );
         border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        overflow: hidden;
+      }
+      .pull-quote::before {
+        content: "\201C";
+        position: absolute;
+        top: -18px;
+        left: 18px;
+        font-family: sans-serif;
+        font-size: 5.5rem;
+        font-weight: 700;
+        line-height: 1;
+        background: linear-gradient(
+          160deg,
+          var(--accent-cyan) 20%,
+          var(--accent-mag) 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        opacity: 0.35;
+        pointer-events: none;
       }
       .pull-quote p {
-        font-family: var(--font-display);
-        font-size: clamp(1.05rem, 2vw, 1.28rem);
+        position: relative;
+        font-family: sans-serif;
+        font-size: clamp(1.08rem, 2vw, 1.3rem);
         font-weight: 500;
-        line-height: 1.6;
+        letter-spacing: -0.01em;
+        line-height: 1.55;
         color: var(--text-primary);
-        font-style: normal;
+        font-style: italic;
         margin: 0;
       }
       .pull-quote cite {
         display: block;
-        margin-top: 12px;
+        margin-top: 14px;
         font-style: normal;
         font-size: 0.78rem;
+        letter-spacing: 0.02em;
         color: var(--text-muted);
         font-weight: 600;
       }
@@ -1877,9 +1949,6 @@
         :root {
           --content-max: 1560px;
         }
-        .article-content {
-          max-width: 860px;
-        }
       }
 
       /* Tablet & below: collapse sidebar */
@@ -2237,8 +2306,8 @@
               </h1>
               <p class="article-hero-sub">
                 Mengenal <strong>Sungai Bah Bolon</strong> sebagai salah satu
-                sungai penting yang mengalir di wilayah Kecamatan Sipispis
-                serta memiliki peran besar bagi kehidupan masyarakat sekitar.
+                sungai penting yang mengalir di wilayah Kecamatan Sipispis serta
+                memiliki peran besar bagi kehidupan masyarakat sekitar.
               </p>
               <div class="article-hero-meta">
                 <span class="meta-item">
@@ -2407,32 +2476,21 @@
               <span class="block-kicker">Bagian 01 · Sejarah & Geografi</span>
               <h2>Sejarah dan Letak Geografis Sungai Bah Bolon</h2>
               <p class="dropcap">
-                Sungai Bah Bolon telah lama dikenal sebagai salah satu aliran
-                sungai penting yang membelah wilayah Kecamatan Sipispis,
-                Kabupaten Serdang Bedagai, Sumatera Utara.
+                Sungai Bah Bolon dikenal sebagai salah satu aliran
+                <strong>penting</strong>
+                yang membelah Kecamatan Sipispis, Kabupaten Serdang Bedagai,
+                Sumatera Utara.
               </p>
               <p>
-                Nama "Bah Bolon" sendiri berasal dari bahasa lokal yang berarti
-                "sungai besar", mencerminkan peran dan ukurannya yang cukup
-                signifikan dibandingkan aliran-aliran kecil lain di
-                sekitarnya.
+                Namanya berasal dari bahasa lokal yang berarti
+                <mark>"sungai besar"</mark> — jejak sejarah pembukaan lahan dan
+                cikal bakal berdirinya desa-desa di sepanjang alirannya.
               </p>
               <p>
-                Secara turun-temurun, warga setempat mengenal sungai ini
-                sebagai bagian dari sejarah pembukaan lahan dan permukiman di
-                kawasan Sipispis, di mana keberadaan air menjadi faktor utama
-                berdirinya desa-desa di sepanjang alirannya.
-              </p>
-              <p>
-                Secara geografis, Sungai Bah Bolon mengalir melintasi beberapa
-                desa di Kecamatan Sipispis sebelum menyatu dengan sistem
-                drainase alami yang lebih besar di wilayah Serdang Bedagai.
-              </p>
-              <p>
-                Letaknya yang berada di antara perkebunan, permukiman, dan
-                lahan pertanian menjadikan sungai ini sebagai penanda batas
-                alami sekaligus jalur penghubung antarwilayah bagi masyarakat
-                sekitar.
+                Sungai ini melintasi beberapa desa di Sipispis sebelum menyatu
+                dengan sistem drainase alami Serdang Bedagai, menjadi
+                <em>penanda batas</em> sekaligus jalur penghubung antarwilayah
+                bagi masyarakat sekitar.
               </p>
 
               <div class="maps-card">
@@ -2503,8 +2561,8 @@
                   <strong>Catatan:</strong> Artikel ini menyajikan gambaran
                   menyeluruh mengenai Sungai Bah Bolon, mulai dari sejarah,
                   peran bagi masyarakat, potensi wisata, hingga tantangan
-                  lingkungan yang dihadapinya, lengkap dengan galeri
-                  dokumentasi di bagian penutup.
+                  lingkungan yang dihadapinya, lengkap dengan galeri dokumentasi
+                  di bagian penutup.
                 </p>
               </div>
             </section>
@@ -2514,30 +2572,20 @@
               <span class="block-kicker">Bagian 02 · Kehidupan Sosial</span>
               <h2>Peran Sungai Bah Bolon Bagi Masyarakat</h2>
               <p>
-                Bagi masyarakat di Kecamatan Sipispis, Sungai Bah Bolon bukan
-                sekadar aliran air, melainkan urat nadi yang menopang berbagai
-                aspek kehidupan sehari-hari.
+                Bagi warga Sipispis, Sungai Bah Bolon bukan sekadar aliran air —
+                ia adalah <span class="grad-underline">urat nadi</span>
+                yang menopang irigasi pertanian dan perkebunan di sepanjang
+                alirannya.
               </p>
               <p>
-                Air sungai ini banyak dimanfaatkan untuk kebutuhan irigasi
-                lahan pertanian dan perkebunan yang tersebar di sepanjang
-                alirannya, menjadikannya penopang utama produktivitas
-                agraris warga.
+                Selain untuk bertani, sungai ini juga jadi tempat mencuci,
+                bersantai di sore hari, hingga membentuk pola permukiman:
+                <em>banyak desa tumbuh mengikuti alurnya</em> sejak dahulu.
               </p>
               <p>
-                Selain untuk pertanian, sungai ini juga digunakan warga untuk
-                berbagai keperluan rumah tangga, mulai dari mencuci hingga
-                sekadar tempat bersantai di sore hari.
-              </p>
-              <p>
-                Keberadaannya turut membentuk pola permukiman, di mana banyak
-                desa dan dusun di Sipispis tumbuh dan berkembang mengikuti
-                alur sungai ini sejak dahulu.
-              </p>
-              <p>
-                Dengan demikian, Sungai Bah Bolon menjadi bagian tak
-                terpisahkan dari identitas dan keberlangsungan hidup
-                masyarakat Kecamatan Sipispis secara turun-temurun.
+                Dengan begitu, Bah Bolon menjadi
+                <strong>bagian tak terpisahkan</strong> dari identitas
+                masyarakat Sipispis secara turun-temurun.
               </p>
               <div
                 class="video-card"
@@ -2581,34 +2629,23 @@
               <h2>Potensi Wisata di Sepanjang Sungai Bah Bolon</h2>
               <p>
                 Di balik fungsinya sebagai sumber kehidupan, Sungai Bah Bolon
-                juga menyimpan potensi wisata alam yang belum banyak
-                tergarap secara maksimal.
+                menyimpan <strong>potensi wisata alam</strong> yang belum
+                tergarap maksimal.
               </p>
               <p>
-                Beberapa titik di sepanjang alirannya menawarkan pemandangan
-                asri dengan air yang mengalir jernih di antara bebatuan dan
-                rimbunnya vegetasi tepian sungai.
+                Beberapa titik menawarkan air jernih yang mengalir di antara
+                bebatuan dan vegetasi tepian yang rimbun — suasana sejuk yang
+                jadi favorit warga untuk sekadar bersantai.
               </p>
               <p>
-                Suasana sejuk dan alami ini kerap menjadi daya tarik bagi
-                warga maupun pengunjung yang ingin sekadar bersantai atau
-                menikmati suasana pedesaan yang tenang.
-              </p>
-              <p>
-                Dengan penataan dan pengelolaan yang tepat, kawasan tepian
-                Sungai Bah Bolon berpotensi dikembangkan menjadi destinasi
-                wisata alam yang mendukung perekonomian masyarakat sekitar.
-              </p>
-              <p>
-                Potensi ini menjadi peluang sekaligus tantangan bagi
-                pemerintah desa dan warga untuk mengelola sumber daya alam
-                secara berkelanjutan.
+                Dengan penataan yang tepat, kawasan ini berpotensi menjadi
+                <em>destinasi wisata</em> yang mendukung ekonomi warga sekitar,
+                sekaligus tantangan bagi pengelolaan yang berkelanjutan.
               </p>
               <div class="pull-quote">
                 <p>
-                  "Airnya masih jernih dan sejuk, banyak warga yang datang
-                  hanya untuk duduk-duduk di tepian sambil menikmati suasana
-                  sore."
+                  "Airnya masih jernih dan sejuk, banyak warga yang datang hanya
+                  untuk duduk-duduk di tepian sambil menikmati suasana sore."
                 </p>
                 <cite>— Cerita warga sekitar Sungai Bah Bolon</cite>
               </div>
@@ -2653,29 +2690,19 @@
               <span class="block-kicker">Bagian 04 · Aktivitas</span>
               <h2>Aktivitas Masyarakat di Sekitar Sungai</h2>
               <p>
-                Keseharian masyarakat di sepanjang Sungai Bah Bolon sangat
-                lekat dengan aktivitas yang berkaitan langsung dengan
-                keberadaan sungai ini.
+                Keseharian warga di sepanjang Sungai Bah Bolon sangat lekat
+                dengan aktivitas yang berkaitan langsung dengan keberadaan
+                sungai ini.
               </p>
               <p>
-                Pada pagi hari, sebagian warga memanfaatkan air sungai untuk
-                mengairi sawah dan kebun, sementara yang lain memulai
-                aktivitas mencuci atau mengambil air untuk kebutuhan harian.
+                Pagi hari dipakai untuk mengairi sawah dan mencuci; sore hari
+                tepiannya ramai oleh <em>anak-anak yang bermain</em> dan petani
+                yang baru pulang dari ladang.
               </p>
               <p>
-                Anak-anak sering terlihat bermain di tepian sungai sepulang
-                sekolah, menjadikan sungai ini sebagai ruang bermain sekaligus
-                tempat bersosialisasi antarwarga.
-              </p>
-              <p>
-                Di sore hari, suasana tepian sungai kian ramai dengan warga
-                yang datang untuk sekadar bersantai maupun para petani yang
-                baru selesai bekerja di ladang.
-              </p>
-              <p>
-                Rangkaian aktivitas ini menunjukkan betapa eratnya hubungan
-                antara masyarakat Sipispis dengan keberadaan Sungai Bah Bolon
-                dalam kehidupan sehari-hari.
+                Rangkaian aktivitas ini menegaskan
+                <strong>eratnya hubungan</strong> masyarakat Sipispis dengan
+                sungai dalam kehidupan sehari-hari.
               </p>
               <div
                 class="video-card"
@@ -2718,31 +2745,19 @@
               <span class="block-kicker">Bagian 05 · Lingkungan</span>
               <h2>Tantangan Lingkungan yang Dihadapi Sungai Bah Bolon</h2>
               <p>
-                Di balik perannya yang besar bagi masyarakat, Sungai Bah Bolon
-                juga menghadapi sejumlah tantangan lingkungan yang perlu
-                mendapat perhatian bersama.
+                Di balik perannya yang besar, Sungai Bah Bolon juga menghadapi
+                sejumlah <strong>tantangan lingkungan</strong> yang perlu
+                perhatian bersama.
               </p>
               <p>
-                Pertumbuhan permukiman dan aktivitas pertanian di sekitar
-                aliran sungai berpotensi menimbulkan pencemaran, baik dari
-                limbah rumah tangga maupun sisa penggunaan pupuk dan
-                pestisida.
+                Pertumbuhan permukiman dan pertanian berisiko memicu pencemaran
+                limbah dan sisa pupuk, sementara alih fungsi lahan di hulu
+                memicu <em>sedimentasi</em> dan perubahan debit air.
               </p>
               <p>
-                Selain itu, alih fungsi lahan di kawasan hulu turut memicu
-                risiko sedimentasi dan perubahan debit air, terutama pada
-                musim kemarau maupun musim hujan.
-              </p>
-              <p>
-                Minimnya kesadaran sebagian pihak dalam menjaga kebersihan
-                tepian sungai juga menjadi persoalan yang perlu terus
-                diedukasikan kepada masyarakat.
-              </p>
-              <p>
-                Diperlukan kolaborasi antara pemerintah desa, komunitas, dan
-                warga untuk menjaga kelestarian Sungai Bah Bolon agar tetap
-                dapat dimanfaatkan secara berkelanjutan oleh generasi
-                mendatang.
+                Diperlukan kolaborasi pemerintah desa, komunitas, dan warga agar
+                kelestarian sungai ini tetap terjaga untuk
+                <span class="grad-underline">generasi mendatang</span>.
               </p>
               <div
                 class="video-card"
@@ -2786,29 +2801,21 @@
               <h2>Penutup: Sungai Bah Bolon sebagai Aliran Kehidupan</h2>
               <p>
                 Sungai Bah Bolon bukan sekadar aliran air yang membelah
-                Kecamatan Sipispis, melainkan bagian penting dari sejarah,
-                kehidupan sosial, dan perekonomian masyarakat setempat.
+                Sipispis, melainkan bagian penting dari
+                <strong>sejarah, kehidupan sosial, dan perekonomian</strong>
+                masyarakat setempat.
               </p>
               <p>
-                Mulai dari sejarah dan letak geografisnya, peran besar bagi
-                masyarakat, potensi wisata yang menjanjikan, hingga berbagai
-                aktivitas warga yang menyertainya, semua menunjukkan betapa
-                eratnya hubungan antara sungai ini dengan kehidupan sehari-hari
-                penduduk Sipispis.
+                Dari sejarah, peran besar bagi warga, potensi wisata, hingga
+                tantangan lingkungannya — semua menunjukkan
+                <em>eratnya hubungan</em> sungai ini dengan keseharian penduduk
+                Sipispis.
               </p>
               <p>
-                Di sisi lain, tantangan lingkungan yang dihadapi mengingatkan
-                pentingnya menjaga kelestarian sungai ini agar manfaatnya
-                dapat terus dirasakan oleh generasi mendatang.
-              </p>
-              <p>
-                Semoga artikel ini bermanfaat sebagai referensi dan catatan
-                perjalanan tentang salah satu aliran kehidupan penting di
-                Kecamatan Sipispis.
-              </p>
-              <p>
-                Galeri berikut menampilkan beberapa dokumentasi tambahan dari
-                lokasi.
+                Semoga artikel ini bermanfaat sebagai referensi tentang salah
+                satu <span class="grad-underline">aliran kehidupan</span>
+                penting di Kecamatan Sipispis. Berikut galeri dokumentasi
+                tambahan dari lokasi.
               </p>
 
               <div class="gallery-heading">📸 Galeri Dokumentasi</div>
@@ -2975,12 +2982,16 @@
                   stroke-linejoin="round"
                 >
                   <path d="M12 3v3M12 18v3M3 12h3M18 12h3" />
-                  <path d="M12 8.2 13.4 11l2.8 1.4-2.8 1.4L12 16.6l-1.4-2.8L7.8 12.4l2.8-1.4Z" />
+                  <path
+                    d="M12 8.2 13.4 11l2.8 1.4-2.8 1.4L12 16.6l-1.4-2.8L7.8 12.4l2.8-1.4Z"
+                  />
                 </svg>
               </span>
               <div class="reco-heading-text">
                 <h2 class="reco-heading-title">Artikel Pilihan</h2>
-                <p class="reco-heading-sub">Temukan pembahasan menarik lainnya.</p>
+                <p class="reco-heading-sub">
+                  Temukan pembahasan menarik lainnya.
+                </p>
               </div>
             </div>
             <span class="reco-accent-line" aria-hidden="true"></span>
@@ -2988,6 +2999,8 @@
             <div class="reco-list">
               <a
                 class="reco-card"
+                target="_blank"
+                rel="noopener noreferrer"
                 href="p_seng.html"
                 aria-label="Baca artikel: Penjelasan Mengenai P.Seng Desa Marjanji Kecamatan Sipispis"
               >
@@ -3020,15 +3033,13 @@
                   </div>
                   <span class="reco-thumb-overlay" aria-hidden="true"></span>
                   <h3 class="reco-item-title">
-                    Penjelasan Mengenai P.Seng Desa Marjanji Kecamatan
-                    Sipispis
+                    Penjelasan Mengenai P.Seng Desa Marjanji Kecamatan Sipispis
                   </h3>
                 </div>
                 <div class="reco-body">
                   <p class="reco-excerpt">
                     Mengenal sejarah, perkembangan, serta kehidupan masyarakat
-                    P.Seng yang menjadi salah satu desa di Kecamatan
-                    Sipispis.
+                    P.Seng yang menjadi salah satu desa di Kecamatan Sipispis.
                   </p>
                   <div class="reco-meta">
                     <span class="reco-date">
@@ -3079,6 +3090,8 @@
               <a
                 class="reco-card"
                 href="berlian-di-lumpur.html"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Baca artikel: Berlian di Lumpur: Keindahan yang Sering Terlupakan"
               >
                 <span class="reco-badge">Filosofi</span>

@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -33,7 +33,7 @@
         overflow-x: hidden;
       }
       body {
-        font-family: "Inter", sans-serif;
+        font-family: sans-serif;
         background: linear-gradient(
           180deg,
           #0b1020 0%,
@@ -996,27 +996,28 @@
         }
       }
 
-
-      /* --- Article Content --- */
+      /* --- Article Content — Premium Reading Typography --- */
       .article-content {
-        max-width: 800px;
+        --article-serif: sans-serif;
+        --article-sans: sans-serif;
+        max-width: 740px;
         width: 100%;
       }
       .content-block {
-        margin-bottom: clamp(44px, 6vw, 64px);
+        margin-bottom: clamp(52px, 6.4vw, 76px);
         scroll-margin-top: calc(var(--nav-h) + 24px);
       }
       .content-block .block-kicker {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        font-family: var(--font-alt);
-        font-size: 0.7rem;
-        font-weight: 700;
-        letter-spacing: 0.14em;
+        font-family: var(--article-sans);
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
         color: var(--accent-cyan);
-        margin-bottom: 14px;
+        margin-bottom: 16px;
         padding: 6px 14px 6px 10px;
         border-radius: 100px;
         background: rgba(56, 189, 248, 0.1);
@@ -1031,21 +1032,21 @@
       }
       .content-block h2 {
         position: relative;
-        font-family: var(--font-display);
-        font-size: clamp(1.6rem, 3.3vw, 2.15rem);
-        font-weight: 800;
-        letter-spacing: -0.02em;
+        font-family: var(--article-serif);
+        font-size: clamp(1.5rem, 3vw, 1.98rem);
+        font-weight: 900;
+        letter-spacing: -0.025em;
         color: var(--text-primary);
-        margin-bottom: 22px;
-        line-height: 1.24;
+        margin-bottom: 24px;
+        line-height: 1.3;
         scroll-margin-top: calc(var(--nav-h) + 24px);
         text-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
       }
       .content-block h2::after {
         content: "";
         display: block;
-        margin-top: 14px;
-        width: 60px;
+        margin-top: 16px;
+        width: 52px;
         height: 3px;
         border-radius: 3px;
         background: linear-gradient(
@@ -1057,23 +1058,61 @@
         box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
       }
       .content-block p {
-        font-size: 1.02rem;
-        line-height: 1.9;
+        font-family: var(--article-sans);
+        font-size: 1.06rem;
+        font-weight: 400;
+        line-height: 1.85;
+        letter-spacing: 0.001em;
         color: var(--text-secondary);
-        margin-bottom: clamp(22px, 3.2vw, 30px);
+        margin-bottom: clamp(20px, 2.8vw, 26px);
       }
       .content-block p:last-child {
         margin-bottom: 0;
       }
+      .content-block strong {
+        color: var(--text-primary);
+        font-weight: 700;
+      }
+      .content-block em {
+        font-style: italic;
+        color: var(--accent-cyan);
+        font-weight: 500;
+      }
+      .content-block mark {
+        background: linear-gradient(
+          120deg,
+          rgba(56, 189, 248, 0.2),
+          rgba(139, 92, 246, 0.14)
+        );
+        color: var(--text-primary);
+        padding: 0.06em 0.4em;
+        border-radius: 5px;
+        font-weight: 600;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+      }
+      .content-block .grad-underline {
+        color: var(--text-primary);
+        font-weight: 600;
+        background-image: linear-gradient(
+          90deg,
+          var(--accent-cyan),
+          var(--accent-mag)
+        );
+        background-position: 0 100%;
+        background-repeat: no-repeat;
+        background-size: 100% 2px;
+        padding-bottom: 3px;
+      }
 
       /* Drop cap on first paragraph */
       .dropcap::first-letter {
-        font-family: var(--font-display);
-        font-size: 4.4rem;
+        font-family: var(--article-serif);
+        font-size: 4.1rem;
         font-weight: 700;
-        line-height: 0.8;
+        line-height: 0.82;
         float: left;
-        padding: 8px 12px 0 0;
+        padding: 6px 12px 0 0;
         background: linear-gradient(
           160deg,
           var(--accent-cyan) 20%,
@@ -1082,6 +1121,13 @@
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
+      }
+
+      /* Ultra-wide keeps the same comfortable measure */
+      @media (min-width: 1920px) {
+        .article-content {
+          max-width: 760px;
+        }
       }
 
       /* =============================================
@@ -1333,7 +1379,8 @@
         flex-shrink: 0;
       }
       .info-box p {
-        font-size: 0.92rem;
+        font-family: sans-serif;
+        font-size: 0.94rem;
         color: var(--text-secondary);
         margin: 0;
         line-height: 1.75;
@@ -1342,32 +1389,57 @@
         color: var(--text-primary);
       }
 
-      /* Pull quote for storytelling emphasis */
+      /* Pull quote — modern blockquote with oversized quotation mark */
       .pull-quote {
-        margin: 30px 0;
-        padding: 26px 28px;
+        position: relative;
+        margin: 32px 0;
+        padding: 30px 32px 30px 34px;
         border-left: 3px solid var(--accent-cyan);
         background: linear-gradient(
           90deg,
-          rgba(56, 189, 248, 0.07),
+          rgba(56, 189, 248, 0.08),
           transparent 70%
         );
         border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        overflow: hidden;
+      }
+      .pull-quote::before {
+        content: "\201C";
+        position: absolute;
+        top: -18px;
+        left: 18px;
+        font-family: sans-serif;
+        font-size: 5.5rem;
+        font-weight: 700;
+        line-height: 1;
+        background: linear-gradient(
+          160deg,
+          var(--accent-cyan) 20%,
+          var(--accent-mag) 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        opacity: 0.35;
+        pointer-events: none;
       }
       .pull-quote p {
-        font-family: var(--font-display);
-        font-size: clamp(1.05rem, 2vw, 1.28rem);
+        position: relative;
+        font-family: sans-serif;
+        font-size: clamp(1.08rem, 2vw, 1.3rem);
         font-weight: 500;
-        line-height: 1.6;
+        letter-spacing: -0.01em;
+        line-height: 1.55;
         color: var(--text-primary);
-        font-style: normal;
+        font-style: italic;
         margin: 0;
       }
       .pull-quote cite {
         display: block;
-        margin-top: 12px;
+        margin-top: 14px;
         font-style: normal;
         font-size: 0.78rem;
+        letter-spacing: 0.02em;
         color: var(--text-muted);
         font-weight: 600;
       }
@@ -1876,9 +1948,6 @@
       @media (min-width: 1920px) {
         :root {
           --content-max: 1560px;
-        }
-        .article-content {
-          max-width: 860px;
         }
       }
 
@@ -2404,28 +2473,24 @@
               <span class="block-kicker">Bagian 01 · Identitas</span>
               <h2>Mengenal P.Seng</h2>
               <p class="dropcap">
-                P.Seng adalah sebutan akrab warga untuk Desa Marjanji, yang
-                berada di wilayah Kecamatan Sipispis, Kabupaten Serdang
+                <mark>P.Seng</mark> adalah sebutan akrab warga untuk Desa
+                Marjanji, di wilayah Kecamatan Sipispis, Kabupaten Serdang
                 Bedagai, Sumatera Utara.
               </p>
               <p>
-                Desa ini terletak di antara hamparan kebun dan permukiman
-                warga yang masih menjunjung tinggi nilai gotong royong.
+                Desa ini terletak di antara hamparan kebun dan permukiman warga
+                yang masih menjunjung tinggi <em>nilai gotong royong</em>.
               </p>
               <p>
-                Di balik suasananya yang tenang, P.Seng menyimpan cerita
-                menarik tentang bagaimana sebuah desa kecil tumbuh
-                berdampingan dengan berbagai fasilitas publik.
+                Di balik suasananya yang tenang, P.Seng menyimpan cerita tentang
+                bagaimana desa kecil ini tumbuh berdampingan dengan berbagai
+                fasilitas publik — dari pos keamanan, aliran sungai, lapangan
+                tempat generasi muda berkumpul, hingga
+                <strong>gerai ritel modern</strong> yang belakangan hadir.
               </p>
               <p>
-                Mulai dari pos keamanan, aliran sungai yang membentang di
-                tepinya, lapangan tempat generasi muda berkumpul, hingga gerai
-                ritel modern yang belakangan hadir di sekitarnya.
-              </p>
-              <p>
-                Artikel ini mengajak Anda menyusuri setiap sudut desa tersebut
-                satu per satu, lengkap dengan dokumentasi video dan galeri
-                foto agar gambaran suasananya terasa lebih hidup.
+                Artikel ini mengajak Anda menyusuri setiap sudut desa tersebut,
+                lengkap dengan dokumentasi video dan galeri foto.
               </p>
 
               <div class="maps-card">
@@ -2507,25 +2572,19 @@
               <h2>Kantor Polisi P.Seng: Penjaga Ketenangan Desa</h2>
               <p>
                 Tidak jauh dari pusat aktivitas warga, berdiri sebuah kantor
-                polisi yang menjadi salah satu titik penting di P.Seng.
+                polisi yang menjadi salah satu titik <strong>penting</strong>
+                di P.Seng — berada di area strategis yang sering dilalui warga
+                dari berbagai penjuru desa.
               </p>
               <p>
-                Lokasinya berada di area yang cukup strategis dan sering
-                dilalui warga dari berbagai penjuru desa.
+                Keberadaan pos keamanan ini menjaga kelancaran dan ketenteraman
+                desa sehari-hari, dari jam sibuk pagi hingga aktivitas warga
+                menjelang malam.
               </p>
               <p>
-                Keberadaan pos keamanan ini turut menjaga kelancaran dan
-                ketenteraman desa sehari-hari, mulai dari jam-jam sibuk pagi
-                hari hingga aktivitas warga menjelang malam.
-              </p>
-              <p>
-                Bagi warga, kehadiran kantor polisi bukan sekadar bangunan
-                administratif, melainkan simbol rasa aman.
-              </p>
-              <p>
-                Berkat kehadirannya, aktivitas sehari-hari — dari anak-anak
-                berangkat sekolah hingga pedagang membuka lapak — bisa
-                berjalan dengan tenang.
+                Bagi warga, kantor polisi bukan sekadar bangunan administratif,
+                melainkan <em>simbol rasa aman</em> — tempat anak-anak berangkat
+                sekolah dan pedagang membuka lapak dengan tenang.
               </p>
               <div
                 class="video-card"
@@ -2569,24 +2628,19 @@
               <h2>Sungai Bahbolon: Nadi Kehidupan di Pinggir Desa</h2>
               <p>
                 Sungai Bahbolon membentang tidak jauh dari kawasan P.Seng dan
-                menjadi bagian penting dari kondisi geografis desa.
+                menjadi bagian penting dari <strong>kondisi geografis</strong>
+                desa, membentuk lanskap khas yang mudah dikenali warga.
               </p>
               <p>
-                Alirannya menemani sisi desa sejak lama, membentuk lanskap
-                khas yang mudah dikenali warga sekitar.
+                Keberadaannya turut memengaruhi jalur akses warga dan aktivitas
+                bercocok tanam di lahan-lahan sekitarnya — air menjadi
+                <span class="grad-underline">bagian tak terpisahkan</span> dari
+                kehidupan desa.
               </p>
               <p>
-                Keberadaan sungai ini turut memengaruhi jalur akses warga dan
-                aktivitas bercocok tanam di lahan-lahan sekitarnya.
-              </p>
-              <p>
-                Air pun menjadi bagian tak terpisahkan dari kehidupan desa,
-                menjadikan sungai lebih dari sekadar batas geografis.
-              </p>
-              <p>
-                Suasana asri di sepanjang tepian sungai juga menjadi ciri khas
-                lingkungan sekitar, tempat warga biasa beraktivitas di
-                sela-sela kesibukan harian mereka.
+                Suasana asri di sepanjang tepiannya menjadi ciri khas
+                lingkungan, tempat warga beraktivitas di sela-sela kesibukan
+                harian.
               </p>
               <div class="pull-quote">
                 <p>
@@ -2638,25 +2692,21 @@
               <h2>Lapangan Sepak Bola: Jantung Sosial Anak Muda</h2>
               <p>
                 Lapangan sepak bola menjadi salah satu fasilitas umum yang
-                paling aktif digunakan warga P.Seng, khususnya generasi muda.
-              </p>
-              <p>
-                Bagi mereka, lapangan ini adalah sarana olahraga sekaligus
+                paling aktif digunakan warga P.Seng, khususnya
+                <strong>generasi muda</strong> — sarana olahraga sekaligus
                 tempat berinteraksi sehari-hari.
               </p>
               <p>
-                Setiap sore, lapangan ini berubah menjadi pusat keramaian
-                kecil yang menghidupkan suasana desa.
-              </p>
-              <p>
-                Suasana itu diramaikan tawa dan semangat anak-anak muda yang
-                berlatih bersama.
+                Setiap sore, lapangan ini berubah menjadi
+                <em>pusat keramaian kecil</em> yang menghidupkan suasana desa,
+                diramaikan tawa dan semangat anak-anak muda yang berlatih
+                bersama.
               </p>
               <p>
                 Lebih dari sekadar tempat bermain bola, lapangan ini adalah
                 ruang tumbuh bersama — tempat persahabatan terjalin dan
-                semangat kebersamaan desa terus terjaga dari generasi ke
-                generasi.
+                <span class="grad-underline">semangat kebersamaan</span> desa
+                terus terjaga dari generasi ke generasi.
               </p>
               <div
                 class="video-card"
@@ -2702,24 +2752,18 @@
               </h2>
               <p>
                 Kehadiran gerai Alfamart di sekitar P.Seng menandai salah satu
-                perkembangan fasilitas umum yang mendukung kebutuhan
-                sehari-hari warga.
-              </p>
-              <p>
-                Titik ini menjadi penanda bahwa kemajuan kawasan perlahan
-                menyapa desa.
+                perkembangan fasilitas umum yang mendukung kebutuhan sehari-hari
+                warga — penanda bahwa <em>kemajuan kawasan</em>
+                perlahan menyapa desa.
               </p>
               <p>
                 Kehadirannya memudahkan warga memenuhi kebutuhan harian tanpa
                 harus menempuh jarak yang jauh.
               </p>
               <p>
-                Meski demikian, kehadirannya tidak menghilangkan karakter dan
-                kehangatan desa yang sudah lama melekat.
-              </p>
-              <p>
-                Justru sebaliknya, ia melengkapi geliat keseharian warga
-                P.Seng.
+                Meski begitu, ia tidak menghilangkan
+                <strong>karakter dan kehangatan</strong> desa yang sudah lama
+                melekat — justru melengkapi geliat keseharian warga P.Seng.
               </p>
               <div
                 class="video-card"
@@ -2763,24 +2807,19 @@
               <h2>Penutup: P.Seng dalam Bingkai Cerita</h2>
               <p>
                 Dokumentasi mengenai P.Seng ini diharapkan dapat memberikan
-                gambaran menyeluruh mengenai desa di Kecamatan Sipispis ini.
+                gambaran menyeluruh mengenai desa di Kecamatan Sipispis ini —
+                dari <strong>fasilitas keamanan</strong> hingga geografi sungai
+                yang menemaninya.
               </p>
               <p>
-                Mulai dari fasilitas keamanan hingga geografi sungai yang
-                menemaninya.
+                Tak lupa, sarana olahraga yang menjadi tempat berkumpul generasi
+                muda, serta fasilitas perbelanjaan yang perlahan tumbuh di
+                sekitarnya, turut melengkapi <em>wajah desa ini</em>.
               </p>
               <p>
-                Tak lupa, sarana olahraga yang menjadi tempat berkumpul
-                generasi muda, serta fasilitas perbelanjaan yang perlahan
-                tumbuh di sekitarnya, turut melengkapi wajah desa ini.
-              </p>
-              <p>
-                Semoga artikel ini bermanfaat sebagai referensi dan catatan
-                perjalanan sebuah desa kecil yang terus berkembang.
-              </p>
-              <p>
-                Galeri berikut menampilkan beberapa dokumentasi tambahan dari
-                lokasi.
+                Semoga artikel ini bermanfaat sebagai referensi tentang
+                <span class="grad-underline">sebuah desa kecil</span> yang terus
+                berkembang. Berikut galeri dokumentasi tambahan dari lokasi.
               </p>
 
               <div class="gallery-heading">📸 Galeri Dokumentasi</div>
@@ -2941,12 +2980,16 @@
                   stroke-linejoin="round"
                 >
                   <path d="M12 3v3M12 18v3M3 12h3M18 12h3" />
-                  <path d="M12 8.2 13.4 11l2.8 1.4-2.8 1.4L12 16.6l-1.4-2.8L7.8 12.4l2.8-1.4Z" />
+                  <path
+                    d="M12 8.2 13.4 11l2.8 1.4-2.8 1.4L12 16.6l-1.4-2.8L7.8 12.4l2.8-1.4Z"
+                  />
                 </svg>
               </span>
               <div class="reco-heading-text">
                 <h2 class="reco-heading-title">Artikel Pilihan</h2>
-                <p class="reco-heading-sub">Temukan pembahasan menarik lainnya.</p>
+                <p class="reco-heading-sub">
+                  Temukan pembahasan menarik lainnya.
+                </p>
               </div>
             </div>
             <span class="reco-accent-line" aria-hidden="true"></span>
@@ -2954,7 +2997,9 @@
             <div class="reco-list">
               <a
                 class="reco-card"
-                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="bah-bolon.html"
                 aria-label="Baca artikel: Menjelajahi Keindahan Sungai Bahbolon di Desa Marjanji"
               >
                 <span class="reco-badge">Wisata Alam</span>
@@ -3031,7 +3076,9 @@
 
               <a
                 class="reco-card"
-                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="stoikisme.html"
                 aria-label="Baca artikel: Stoikisme, Cara Berpikir Tenang Menghadapi Kehidupan"
               >
                 <span class="reco-badge">Filosofi</span>
@@ -3057,8 +3104,8 @@
                 </div>
                 <div class="reco-body">
                   <p class="reco-excerpt">
-                    Belajar dari para filsuf Stoa untuk merespons gejolak
-                    hidup dengan kepala dingin dan hati tenang.
+                    Belajar dari para filsuf Stoa untuk merespons gejolak hidup
+                    dengan kepala dingin dan hati tenang.
                   </p>
                   <div class="reco-meta">
                     <span class="reco-date">
